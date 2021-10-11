@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Locksmith.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "-Name teste"
+    }
+  }
+}
