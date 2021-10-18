@@ -1,0 +1,11 @@
+title: 'Google Maps API Autocomplete'
+url: https://maps.googleapis.com/maps
+details: Key restrictions are set per service. When testing the key, if the key is restricted/inactive on one service try it with another. Cost Varies
+commands:
+- tool: curl
+  command: 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Bingh&types=%28cities%29&key=KEY_HERE'
+  parameters:
+  - description: KEY_HERE
+    key: KEY_HERE
+    default_value:
+regex:

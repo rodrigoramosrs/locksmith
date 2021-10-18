@@ -1,0 +1,11 @@
+title: 'Google Maps API Embed'
+url: https://maps.googleapis.com/maps
+details: Key restrictions are set per service. When testing the key, if the key is restricted/inactive on one service try it with another. Cost Varies
+commands:
+- tool: curl
+  command: 'https://www.google.com/maps/embed/v1/place?q=place_id:ChIJyX7muQw8tokR2Vf5WBBk1iQ&key=KEY_HERE'
+  parameters:
+  - description: KEY_HERE
+    key: KEY_HERE
+    default_value:
+regex:

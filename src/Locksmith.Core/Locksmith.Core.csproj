@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shell.NET" Version="0.2.2" />
+    <PackageReference Include="YamlDotNet" Version="11.2.1" />
   </ItemGroup>
 
 </Project>

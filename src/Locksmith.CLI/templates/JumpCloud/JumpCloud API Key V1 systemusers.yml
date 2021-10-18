@@ -1,0 +1,13 @@
+title: JumpCloud API Key V1 systemusers
+url: https://docs.jumpcloud.com/1.0/systemusers
+details: 'List systems
+https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview
+'
+commands:
+- tool: curl
+  command: '-H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systemusers"'
+  parameters:
+  - description: APIKEY
+    key: APIKEYHERE
+    default_value:
+regex:

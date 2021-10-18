@@ -1,0 +1,19 @@
+title: Google Recaptcha key
+url: https://developers.google.com/recaptcha/docs/verify
+details: 'Send a POST to the following URL:
+
+https://www.google.com/recaptcha/api/siteverify
+"secret" and "response" are two required POST parameters, where "secret" is the key and "response" is the response to test for.
+
+ The API key always starts with a 6 and is 40 chars long'
+commands:
+- tool: curl
+  command: '-d "secret=YOUR_SECRET&response=RESPONSE_TO_TEST" -X POST https://www.google.com/recaptcha/api/siteverify'
+  parameters:
+  - description: YOUR_SECRET
+    key: YOUR_SECRET
+    default_value:
+  - description: RESPONSE_TO_TEST
+    key: RESPONSE_TO_TEST
+    default_value:
+regex: '^6[0-9a-zA-Z_-]{39}$'

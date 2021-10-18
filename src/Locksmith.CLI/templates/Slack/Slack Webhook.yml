@@ -1,0 +1,17 @@
+title: Slack Webhook
+url: https://api.slack.com/incoming-webhooks
+details: '
+If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
+
+curl -s -X POST -H "Content-type: application/json" -d ''{"text":""}'' "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"'
+commands:
+- tool: curl
+  command: '-s -X POST -H "Content-type: application/json" -d ''{"text":""}'' "WEBHOOK_URL"'
+  parameters:
+  - description: WEBHOOK_URL ex. https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+    key: WEBHOOK_URL
+    default_value:
+regex:
+
+## []()
+

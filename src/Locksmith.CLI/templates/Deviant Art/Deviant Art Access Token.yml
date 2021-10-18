@@ -1,0 +1,11 @@
+title: Deviant Art Access Token
+url: https://www.deviantart.com/developers/authentication
+details: 
+commands:
+- tool: curl
+  command: 'https://www.deviantart.com/api/v1/oauth2/placebo -d access_token=<access_token>'
+  parameters:
+  - description: 'access_token'
+    key: '<access_token>'
+    default_value:
+regex:

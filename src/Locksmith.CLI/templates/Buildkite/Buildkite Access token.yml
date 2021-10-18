@@ -1,0 +1,11 @@
+title: Buildkite Access token
+url: https://buildkite.com/docs/apis/rest-api
+details: 
+commands:
+- tool: curl
+  command: '-H "Authorization: Bearer ACCESS_TOKEN" https://api.buildkite.com/v2/user'
+  parameters:
+  - description: ACCESS_TOKEN
+    key: ACCESS_TOKEN
+    default_value:
+regex:

@@ -1,0 +1,11 @@
+title: Asana Access token
+url: https://asana.com/developers/documentation/getting-started/auth#personal-access-token
+details: 
+commands:
+- tool: curl
+  command: '-H "Authorization: Bearer " https://app.asana.com/api/1.0/users/me'
+  parameters:
+  - description: ACCESS_TOKEN
+    key: ACCESS_TOKEN
+    default_value:
+regex:

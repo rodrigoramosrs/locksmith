@@ -1,0 +1,11 @@
+title: Travis CI API token
+url: https://developer.travis-ci.com/gettingstarted
+details: 
+commands:
+- tool: curl
+  command: '-H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.org/repos'
+  parameters:
+  - description: TOKEN
+    key: <TOKEN>
+    default_value:
+regex:

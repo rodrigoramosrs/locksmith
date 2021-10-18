@@ -1,0 +1,11 @@
+title: Gitlab personal access token
+url: https://docs.gitlab.com/ee/api/README.html#personal-access-tokens
+details: 
+commands:
+- tool: curl
+  command: '"https://gitlab.example.com/api/v4/projects?private_token=<your_access_token>"'
+  parameters:
+  - description: your_access_token
+    key: <your_access_token>
+    default_value:
+regex:

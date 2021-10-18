@@ -1,0 +1,11 @@
+title: 'Google Maps API Roads'
+url: https://maps.googleapis.com/maps
+details: Key restrictions are set per service. When testing the key, if the key is restricted/inactive on one service try it with another. Cost $10
+commands:
+- tool: curl
+  command: 'https://roads.googleapis.com/v1/nearestRoads?points=60.170880,24.942795|60.170879,24.942796|60.170877,24.942796&key=KEY_HERE'
+  parameters:
+  - description: KEY_HERE
+    key: KEY_HERE
+    default_value:
+regex:

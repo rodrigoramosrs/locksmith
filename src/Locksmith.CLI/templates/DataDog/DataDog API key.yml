@@ -1,0 +1,14 @@
+title: DataDog API key
+url: https://docs.datadoghq.com/api/
+details: 
+commands:
+- tool: curl
+  command: '"https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_key=<application_key>"'
+  parameters:
+  - description: 'api_key'
+    key: '<api_key>'
+    default_value:
+  - description: 'application_key'
+    key: '<application_key>'
+    default_value:
+regex:

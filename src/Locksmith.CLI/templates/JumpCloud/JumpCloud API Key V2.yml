@@ -1,0 +1,13 @@
+title: JumpCloud API Key V2
+url: https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system
+details: 'List systems'
+commands:
+- tool: curl
+  command: '-X GET https://console.jumpcloud.com/api/v2/systems/System_ID/memberof \
+  -H ''Accept: application/json'' \
+  -H ''Content-Type: application/json'' \'
+  parameters:
+  - description: System_ID
+    key: System_ID
+    default_value:
+regex:

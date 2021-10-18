@@ -1,0 +1,14 @@
+title: Twilio Account_sid and Auth token
+url: https://www.twilio.com/docs/iam/api/account
+details: 
+commands:
+- tool: curl
+  command: '-X GET ''https://api.twilio.com/2010-04-01/Accounts.json'' -u ACCOUNT_SID:AUTH_TOKEN'
+  parameters:
+  - description: ACCOUNT_SID
+    key: ACCOUNT_SID
+    default_value:
+  - description: AUTH_TOKEN
+    key: AUTH_TOKEN
+    default_value:
+regex:

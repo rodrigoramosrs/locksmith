@@ -1,0 +1,11 @@
+title: Github Token_second_step
+url: https://developer.github.com/v3/
+details: 'Check scope of your api token in "X-OAuth-Scopes:"'
+commands:
+- tool: curl
+  command: '-s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"'
+  parameters:
+  - description: TOKEN_HERE
+    key: TOKEN_HERE
+    default_value:
+regex:

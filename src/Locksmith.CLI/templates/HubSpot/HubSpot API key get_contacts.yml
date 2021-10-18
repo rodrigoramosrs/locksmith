@@ -1,0 +1,11 @@
+title: HubSpot API key get_contacts
+url: https://developers.hubspot.com/docs/methods/owners/get_owners
+details: 'Get all contact details'
+commands:
+- tool: curl
+  command: 'https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey=api_key'
+  parameters:
+  - description: hapikey
+    key: api_key
+    default_value:
+regex:

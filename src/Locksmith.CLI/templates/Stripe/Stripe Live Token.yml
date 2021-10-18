@@ -1,0 +1,14 @@
+title: Stripe Live Token
+url: https://stripe.com/docs/api/authentication
+details: 
+commands:
+- tool: curl
+  command: 'ttps://api.stripe.com/v1/charges -u token_here:'
+  parameters:
+  - description: token_here
+    key: token_here
+    default_value:
+  - description: description
+    key: key
+    default_value:
+regex:

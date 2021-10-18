@@ -1,0 +1,11 @@
+title: Loqate API key
+url: https://www.loqate.com/resources/support/apis
+details: 
+commands:
+- tool: curl
+  command: '"http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=<KEY_HERE>&Countries=US,CA&Language=en&Limit=5&Text=BHAR"'
+  parameters:
+  - description: KEY
+    key: <KEY_HERE>
+    default_value:
+regex:

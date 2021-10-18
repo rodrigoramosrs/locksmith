@@ -1,0 +1,11 @@
+title: Iterable API Key
+url: https://api.iterable.com/api/docs
+details: 'Export campaign analytics data in JSON format, one entry per line. Use of either ''range'' or ''startDateTime'' and ''endDateTime'' is required.'
+commands:
+- tool: curl
+  command: '-H "Api_Key: <API_KEY>" https://api.iterable.com/api/export/data.json?dataTypeName=emailSend&range=Today&onlyFields=List.empty'
+  parameters:
+  - description: API_KEY
+    key: <API_KEY>
+    default_value:
+regex:

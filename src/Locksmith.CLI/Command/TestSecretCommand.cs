@@ -1,5 +1,7 @@
 ﻿using Locksmith.Core.Factory;
+using Locksmith.Core.Model.Core;
 using Locksmith.Core.Model.Platform;
+using Locksmith.Core.Model.Template;
 using Spectre.Console;
 using Spectre.Console.Cli;
 using System;
@@ -48,47 +50,65 @@ namespace Locksmith.CLI.Command
 
         private async Task Boot()
         {
-            var secretContent = PromptSecret();
-
             var selectedTestOption = PromptTest();
 
-            var endpoint = PromptEndpoint();
+            var userParameters = PromptUserParameter(selectedTestOption);
 
-            TestSecret(selectedTestOption, secretContent);
+            TestSecret(selectedTestOption, userParameters);
 
         }
 
-        private void TestSecret(eTestType SelectedTestEnum, string Secret)
+        private void TestSecret(TemplateModel testTemplate, Dictionary<int, Dictionary<int, string>> secretParameters)
         {
+            List<KeychainTestResult> testResultList = new List<KeychainTestResult>();
             _console.Status()
                             .Start("[yellow]Testing...[/]", ctx =>
                             {
                                 ctx.Status("[bold blue]Testing secret agains api, please wait...[/]");
                                 Thread.Sleep(1000);
-                                KeyChainTesterFactory.TestSecret(SelectedTestEnum, Secret);
+                                testResultList = KeyChainTesterFactory.TestSecret(testTemplate, secretParameters);
                             });
+
+            _console.MarkupLine($"[bold red]See the results bellow:[/]");
+
+            foreach (var result in testResultList)
+            {
+                _console.WriteLine($"= = = = = = = = = = = = = = = = = = = = = = = =");
+                _console.MarkupLine($"[bold]{result.RawResponse}[/]");
+                _console.WriteLine($"= = = = = = = = = = = = = = = = = = = = = = = =");
+            }
+
         }
 
-        private string PromptSecret()
+        private Dictionary<int, Dictionary<int, string>> PromptUserParameter(TemplateModel testTemplate)
         {
-            return _console.Prompt(
-                        new TextPrompt<string>("[grey][[required]][/] [bold red]Paste secret you want to test[/]?"));
+            Dictionary<int, Dictionary<int, string>> result = new Dictionary<int, Dictionary<int, string>>();
+            foreach (var commands in testTemplate.commands)
+            {
+                Dictionary<int, string> parameters = new Dictionary<int, string>();
+                foreach (var parameter in commands.parameters)
+                {
+                    var userInput = _console.Prompt(
+                         new TextPrompt<string>($"[grey][[required]][/] [bold red]{parameter.description}[/]? [grey]{parameter.default_value}[/]"));
+
+                    parameters.Add(parameters.Count, userInput);
+                }
+                result.Add(result.Count, parameters);
+            }
+
+            return result;
+
+
         }
 
-        private string PromptEndpoint()
+        private TemplateModel PromptTest()
         {
-            var selectedTestOption = _console.Prompt(
-                        new TextPrompt<string>("[grey][[optional]][/] [bold red]Paste endpoint to test[/]?").AllowEmpty());
 
-            if (!string.IsNullOrEmpty(selectedTestOption))
-                _console.WriteLine($"Ok. Let's try {selectedTestOption}.");
+            var templates = Locksmith.Core.Factory.TemplatesFactory.GetTemplatesFromFolder(".\\templates");
+            //var options = Enum.GetValues(typeof(eTestType)).Cast<eTestType>().Select(x => $"{(int)x} - {x.ToString().Replace("_", " ")}").ToList();
 
-            return selectedTestOption;
-        }
+            var options = templates.Select((obj, index) => $"{index + 1 } - {obj.title}");
 
-        private eTestType PromptTest()
-        {
-            var options = Enum.GetValues(typeof(eTestType)).Cast<eTestType>().Select(x => $"{(int)x} - {x.ToString().Replace("_", " ")}").ToList();
 
             var selectedTest = _console.Prompt(
                             new SelectionPrompt<string>()
@@ -99,8 +119,8 @@ namespace Locksmith.CLI.Command
                                 .AddChoiceGroup("Available tests:", options));
 
             _console.MarkupLine($"[grey][[required]][/] [bold red]Which test do you want to execute[/]? {selectedTest}");
-            
-            return (eTestType)Convert.ToInt32(selectedTest.Split(' ')[0]);
+
+            return templates[Convert.ToInt32(selectedTest.Split(' ')[0]) - 1];
             //
         }
     }

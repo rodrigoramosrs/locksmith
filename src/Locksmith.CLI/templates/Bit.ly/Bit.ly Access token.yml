@@ -1,0 +1,11 @@
+title: Bit.ly Access token
+url: https://dev.bitly.com/authentication.html
+details: 'Visit the following URL to check for validity'
+commands:
+- tool: curl
+  command: 'https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://www.google.com'
+  parameters:
+  - description: ACCESS_TOKEN
+    key: ACCESS_TOKEN
+    default_value:
+regex:

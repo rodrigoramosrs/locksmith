@@ -6,11 +6,7 @@ namespace Locksmith.Core.Model.Core
 {
     public class KeychainTestResult
     {
-        public bool RawResponse { get; set; }
+        public string RawResponse { get; set; }
         public bool Success { get; set; }
-
-        public string Info { get; set; }
-
-        public string DocumentationUrl { get; set; }
     }
 }

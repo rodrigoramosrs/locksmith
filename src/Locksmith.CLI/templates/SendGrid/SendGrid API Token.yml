@@ -1,0 +1,11 @@
+title: SendGrid API Token
+url: https://docs.sendgrid.com/api-reference
+details:
+commands:
+- tool: curl
+  command: '-X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN" -H "Content-Type: application/json"'
+  parameters:
+  - description: SENDGRID_TOKEN
+    key: SENDGRID_TOKEN
+    default_value:
+regex:

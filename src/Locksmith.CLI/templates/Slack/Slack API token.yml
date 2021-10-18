@@ -1,0 +1,11 @@
+title: Slack API token
+url: https://api.slack.com/web
+details: 
+commands:
+- tool: curl
+  command: '-sX POST "https://slack.com/api/auth.test?token=<token>&pretty=1"'
+  parameters:
+  - description: token
+    key: <token>
+    default_value:
+regex:

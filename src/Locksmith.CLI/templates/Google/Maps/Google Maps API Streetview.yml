@@ -1,0 +1,11 @@
+title: 'Google Maps API key'
+url: https://maps.googleapis.com/maps
+details: Key restrictions are set per service. When testing the key, if the key is restricted/inactive on one service try it with another. Cost $7
+commands:
+- tool: curl
+  command: 'https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10&key=KEY_HERE'
+  parameters:
+  - description: KEY_HERE
+    key: KEY_HERE
+    default_value:
+regex:

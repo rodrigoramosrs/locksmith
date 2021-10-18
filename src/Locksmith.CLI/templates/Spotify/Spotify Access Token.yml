@@ -1,0 +1,11 @@
+title: Spotify Access Token
+url: https://developer.spotify.com/documentation/general/guides/authorization-guide/
+details:
+commands:
+- tool: curl
+  command: '-H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me'
+  parameters:
+  - description: ACCESS_TOKEN
+    key: <ACCESS_TOKEN>
+    default_value:
+regex:

@@ -18,8 +18,8 @@ namespace Locksmith.CLI
     {
         static void Main(string[] args)
         {
-
             ExtractEmbededResources();
+            
             var app = new CommandApp<TestSecretCommand>();
             app.Configure(config =>
             {

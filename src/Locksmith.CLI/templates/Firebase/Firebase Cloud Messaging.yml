@@ -1,0 +1,11 @@
+title: Firebase Cloud Messaging
+url: https://firebase.google.com/docs/cloud-messaging
+details: 'Reference: https://abss.me/posts/fcm-takeover'
+commands:
+- tool: curl
+  command: '-s -X POST --header "Authorization: key=AUTH_KEY" --header "Content-Type:application/json" ''https://fcm.googleapis.com/fcm/send'' -d ''{"registration_ids":["1"]}'''
+  parameters:
+  - description: AUTH_KEY
+    key: AUTH_KEY
+    default_value:
+regex:

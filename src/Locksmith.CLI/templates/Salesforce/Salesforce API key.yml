@@ -1,0 +1,11 @@
+title: Salesforce API key
+url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm
+details: 
+commands:
+- tool: curl
+  command: 'https://instance_name.salesforce.com/services/data/v20.0/ -H ''Authorization: Bearer access_token_here'''
+  parameters:
+  - description: access_token
+    key: access_token_here
+    default_value:
+regex:

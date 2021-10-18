@@ -1,0 +1,14 @@
+title: 'BrowserStack Access Key'
+url: https://www.browserstack.com/automate/rest-api
+details: 
+commands:
+- tool: curl
+  command: '-u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json'
+  parameters:
+  - description: USERNAME
+    key: USERNAME
+    default_value:
+  - description: ACCESS_KEY
+    key: ACCESS_KEY
+    default_value:
+regex:
