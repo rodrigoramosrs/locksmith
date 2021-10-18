@@ -46,27 +46,21 @@ namespace Locksmith.CLI.Command
 
 
 
-        private async static Task Boot()
+        private async Task Boot()
         {
-            var options = Enum.GetNames(typeof(eTestType)).Select(x => x.Replace("_", " ")).ToList();
+            var secretContent = PromptSecret();
 
-            string secretContent = PromptSecret();
+            var selectedTestOption = PromptTest();
 
-            string selectedTestOption = SelectTest(options);
+            var endpoint = PromptEndpoint();
 
-            string endpoint = PromptEndpoint();
-
-            AnsiConsole.WriteLine($"Ok. Let's try {selectedTestOption}.");
-
-            var SelectedTestEnum = Enum.Parse(typeof(eTestType), selectedTestOption.Replace(" ", "_"));
-
-            TestSecret((eTestType)SelectedTestEnum, secretContent);
+            TestSecret(selectedTestOption, secretContent);
 
         }
 
-        private static void TestSecret(eTestType SelectedTestEnum, string Secret)
+        private void TestSecret(eTestType SelectedTestEnum, string Secret)
         {
-            AnsiConsole.Status()
+            _console.Status()
                             .Start("[yellow]Testing...[/]", ctx =>
                             {
                                 ctx.Status("[bold blue]Testing secret agains api, please wait...[/]");
@@ -75,27 +69,39 @@ namespace Locksmith.CLI.Command
                             });
         }
 
-        private static string PromptSecret()
+        private string PromptSecret()
         {
-            return AnsiConsole.Prompt(
+            return _console.Prompt(
                         new TextPrompt<string>("[grey][[required]][/] [bold red]Paste secret you want to test[/]?"));
         }
 
-        private static string PromptEndpoint()
+        private string PromptEndpoint()
         {
-            return AnsiConsole.Prompt(
+            var selectedTestOption = _console.Prompt(
                         new TextPrompt<string>("[grey][[optional]][/] [bold red]Paste endpoint to test[/]?").AllowEmpty());
+
+            if (!string.IsNullOrEmpty(selectedTestOption))
+                _console.WriteLine($"Ok. Let's try {selectedTestOption}.");
+
+            return selectedTestOption;
         }
 
-        private static string SelectTest(List<string> options)
+        private eTestType PromptTest()
         {
-            return AnsiConsole.Prompt(
+            var options = Enum.GetValues(typeof(eTestType)).Cast<eTestType>().Select(x => $"{(int)x} - {x.ToString().Replace("_", " ")}").ToList();
+
+            var selectedTest = _console.Prompt(
                             new SelectionPrompt<string>()
                                 .HighlightStyle("red")
                                 .Title("[grey][[required]][/] [bold red]Which test do you want to execute[/]?")
                                 .PageSize(20)
                                 .MoreChoicesText("[grey](Move up and down to reveal more test type)[/]")
                                 .AddChoiceGroup("Available tests:", options));
+
+            _console.MarkupLine($"[grey][[required]][/] [bold red]Which test do you want to execute[/]? {selectedTest}");
+            
+            return (eTestType)Convert.ToInt32(selectedTest.Split(' ')[0]);
+            //
         }
     }
 }

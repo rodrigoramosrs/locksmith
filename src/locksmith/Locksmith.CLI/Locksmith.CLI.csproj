@@ -7,11 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="lib\curl\windows\x32\curl_x32.zip" />
+    <None Remove="lib\curl\windows\x64\curl_x64.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="lib\curl\windows\x32\curl_x32.zip" />
+    <EmbeddedResource Include="lib\curl\windows\x64\curl_x64.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.42.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Locksmith.Core\Locksmith.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Tests\Default.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ namespace Locksmith.Core.Model.Platform
 {
     public enum eTestType
     {
-        ABTasty_API_Key,
+        ABTasty_API_Key = 1,
         Algolia_API_key,
         Amplitude_API_Keys,
         Asana_Access_token,

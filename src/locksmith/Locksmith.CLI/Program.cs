@@ -5,7 +5,10 @@ using Spectre.Console;
 using Spectre.Console.Cli;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,6 +18,8 @@ namespace Locksmith.CLI
     {
         static void Main(string[] args)
         {
+
+            ExtractEmbededResources();
             var app = new CommandApp<TestSecretCommand>();
             app.Configure(config =>
             {
@@ -46,8 +51,40 @@ namespace Locksmith.CLI
                 .LeftAligned()
                 .Color(Color.Red));
 
-            AnsiConsole.MarkupLine($"[bold yellow]Just a secret tester![/]");
+            AnsiConsole.MarkupLine($"[bold yellow]Just a expert for secrets![/]");
             AnsiConsole.MarkupLine("[bold gray]repo: https://github.com/rodrigoramosrs/locksmith[/]");
+        }
+
+        private static void ExtractEmbededResources()
+        {
+
+            string resourceName = "Locksmith.CLI.lib.curl.windows.x64.curl_x64.zip";
+            string outputName = "curl_x64.zip";
+            Assembly currentAssembly = Assembly.GetExecutingAssembly();
+
+            if (!Directory.Exists(@".\lib"))
+                Directory.CreateDirectory(@".\lib");
+
+            FileStream outputFileStream = new FileStream(@$".\lib\{outputName}", FileMode.OpenOrCreate);
+            Stream res = currentAssembly.GetManifestResourceStream(resourceName);
+            if (res != null)
+            {
+                res.CopyTo(outputFileStream);
+                res.Close();
+            }
+            outputFileStream.Close();
+
+            try
+            {
+                ZipFile.ExtractToDirectory(@$".\lib\{outputName}", @$".\lib");
+            }
+            catch (Exception)
+            {
+
+
+            }
+            
+
         }
     }
 }

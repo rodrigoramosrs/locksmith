@@ -1,5 +1,7 @@
 ﻿using Locksmith.Core.Model.Request;
 using Locksmith.Core.Services.Curl;
+using Locksmith.Core.Services.Shell;
+using Locksmith.Core.Services.Shell.Utils;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -31,28 +33,15 @@ namespace Locksmith.Core.Factory
         }
 
 
-        public async static Task<string> ExecuteCurlRequest(string CurlCommand)
+        public static string ExecuteCurlRequest(string CurlCommand)
         {
+            string result;
+            string rootPath = @".\curl";
+            if (OSUtils.IsWin())
+                rootPath = OSUtils.GetWindowsShortPath($"{Environment.CurrentDirectory}\\lib\\curl.exe");
 
-            string contentResult = "";
-
-            using (var request = new StringParser().CreateHttpRequest(CurlCommand))
-            {
-                
-                HttpClient client = new HttpClient();
-                var requestResult = await client.SendAsync(request);
-                contentResult = await requestResult.Content.ReadAsStringAsync();
-                try
-                {
-                    requestResult.EnsureSuccessStatusCode();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(requestResult.ReasonPhrase);
-                    Console.WriteLine(contentResult);
-                }
-                return contentResult;
-            }
+            result = ShellService.Execute($@"{rootPath} {CurlCommand}");
+            return result;
         }
 
     }
