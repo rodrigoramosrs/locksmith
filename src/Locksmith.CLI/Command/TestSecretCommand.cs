@@ -42,7 +42,7 @@ namespace Locksmith.CLI.Command
 
         public override int Execute(CommandContext context, Settings settings)
         {
-            Boot().GetAwaiter().GetResult();
+           Boot().GetAwaiter().GetResult();
             return 0;
         }
 
@@ -61,23 +61,37 @@ namespace Locksmith.CLI.Command
         private void TestSecret(TemplateModel testTemplate, Dictionary<int, Dictionary<int, string>> secretParameters)
         {
             List<KeychainTestResult> testResultList = new List<KeychainTestResult>();
+
+            _console.MarkupLine($"[bold yellow][[+]] [/][bold yellow]Testing {testTemplate.title}:[/]");
+
             _console.Status()
-                            .Start("[yellow]Testing...[/]", ctx =>
+                            .Start("[bold yellow] | [/][yellow] Testing...[/]", ctx =>
                             {
-                                ctx.Status("[bold blue]Testing secret agains api, please wait...[/]");
+                                ctx.Status("[bold yellow] Testing secret agains api, please wait...[/]");
                                 Thread.Sleep(1000);
                                 testResultList = KeyChainTesterFactory.TestSecret(testTemplate, secretParameters);
                             });
 
-            _console.MarkupLine($"[bold red]See the results bellow:[/]");
+            _console.MarkupLine($"[bold yellow] | [/][bold] See the results bellow:[/]");
+
 
             foreach (var result in testResultList)
             {
-                _console.WriteLine($"= = = = = = = = = = = = = = = = = = = = = = = =");
-                _console.MarkupLine($"[bold]{result.RawResponse}[/]");
-                _console.WriteLine($"= = = = = = = = = = = = = = = = = = = = = = = =");
-            }
+                string SuccessLabel = result.Success ? "Success" : "Failed";
+                string Color = result.Success ? "blue" : "red";
+                string Content = result.RawResponse.Replace("[", "]]").Replace("]", "]]");
 
+                _console.MarkupLine($"[bold yellow] | [/][bold] Status:[/] [{Color} bold]{SuccessLabel}[/]");
+                _console.MarkupLine($"[bold yellow] | [/][bold] Output:[/]");
+
+
+                foreach (string line in Content.Split('\n'))
+                {
+                    _console.MarkupLine($"[bold gray]{line.Replace("[", "]]").Replace("]", "]]")}[/]");
+                }
+
+            }
+            
         }
 
         private Dictionary<int, Dictionary<int, string>> PromptUserParameter(TemplateModel testTemplate)
@@ -105,7 +119,6 @@ namespace Locksmith.CLI.Command
         {
 
             var templates = Locksmith.Core.Factory.TemplatesFactory.GetTemplatesFromFolder(".\\templates").OrderBy(x => x.title).ToList();
-            //var options = Enum.GetValues(typeof(eTestType)).Cast<eTestType>().Select(x => $"{(int)x} - {x.ToString().Replace("_", " ")}").ToList();
 
             var options = templates.Select((obj, index) => $"{index + 1 } - {obj.title}");
 

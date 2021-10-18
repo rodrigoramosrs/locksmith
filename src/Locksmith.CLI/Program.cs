@@ -27,6 +27,17 @@ namespace Locksmith.CLI
             });
             PrintHeader();
             app.Run(args);
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
