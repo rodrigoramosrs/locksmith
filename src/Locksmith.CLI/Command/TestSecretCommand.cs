@@ -107,7 +107,7 @@ namespace Locksmith.CLI.Command
             var templates = Locksmith.Core.Factory.TemplatesFactory.GetTemplatesFromFolder(".\\templates");
             //var options = Enum.GetValues(typeof(eTestType)).Cast<eTestType>().Select(x => $"{(int)x} - {x.ToString().Replace("_", " ")}").ToList();
 
-            var options = templates.Select((obj, index) => $"{index + 1 } - {obj.title}");
+            var options = templates.OrderBy(x => x.title).Select((obj, index) => $"{index + 1 } - {obj.title}");
 
 
             var selectedTest = _console.Prompt(
