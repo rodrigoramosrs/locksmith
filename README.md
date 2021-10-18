@@ -24,7 +24,7 @@ $ locksmith.exe
 $ locksmith
 ```
 
-The cli will guide you for select the right test for you.
+The cli will guide you to select the right test for you.
 
 ## I want more tests. So, can i extend the test base?
 
