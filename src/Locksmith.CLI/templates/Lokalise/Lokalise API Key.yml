@@ -1,0 +1,13 @@
+title: Lokalise API Key
+url: https://app.lokalise.com/api2docs/curl/#resource-authentication
+details: 
+commands:
+- tool: curl
+  command: '--request GET \
+  --url https://api.lokalise.com/api2/projects/ \
+  --header ''x-api-token: <API-KEY-HERE>'''
+  parameters:
+  - description: API-KEY-
+    key: <API-KEY-HERE>
+    default_value:
+regex:

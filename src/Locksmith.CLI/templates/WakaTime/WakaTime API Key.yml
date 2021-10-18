@@ -1,0 +1,11 @@
+title: WakaTime API Key
+url: https://wakatime.com/developers
+details: 
+commands:
+- tool: curl
+  command: '"https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"'
+  parameters:
+  - description: KEY
+    key: KEY_HERE
+    default_value:
+regex:

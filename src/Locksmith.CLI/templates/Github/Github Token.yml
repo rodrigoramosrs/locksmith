@@ -1,0 +1,14 @@
+title: Github Token
+url: https://developer.github.com/v3/
+details: 
+commands:
+- tool: curl
+  command: '-s -u "user_name:apikey" https://api.github.com/user'
+  parameters:
+  - description: user_name
+    key: user_name
+    default_value:
+  - description: apikey
+    key: apikey
+    default_value:
+regex:

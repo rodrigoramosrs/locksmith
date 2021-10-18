@@ -1,0 +1,12 @@
+title: Instagram Graph API Access Token
+url: (https://developers.facebook.com/docs/instagram-api/getting-started
+details: 'E.g.: IGQVJ...'
+commands:
+- tool: curl
+  command: '-i -X GET ''https://graph.facebook.com/v8.0/me/accounts?access_token=access-token'''
+  parameters:
+
+  - description: access-token
+    key: access-token
+    default_value:
+regex:

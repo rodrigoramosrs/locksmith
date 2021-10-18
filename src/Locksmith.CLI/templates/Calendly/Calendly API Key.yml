@@ -1,0 +1,11 @@
+title: Calendly API Key
+url: 'https://developer.calendly.com/docs'
+details: Get user information
+commands:
+- tool: curl
+  command: '--header "X-TOKEN: your_token" https://calendly.com/api/v1/users/me'
+  parameters:
+  - description: your_token
+    key: your_token
+    default_value:
+regex:

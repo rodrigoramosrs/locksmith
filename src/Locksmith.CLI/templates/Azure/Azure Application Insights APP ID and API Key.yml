@@ -1,0 +1,14 @@
+title: Azure Application Insights APP ID and API Key
+url: https://dev.applicationinsights.io/reference
+details: Get the total number of requests made in last 24 hours
+commands:
+- tool: curl
+  command: '-H "x-api-key: API_Key" "https://api.applicationinsights.io/v1/apps/APP_ID/metrics/requests/count"'
+  parameters:
+  - description: APP_ID
+    key: APP_ID
+    default_value:
+  - description: API_Key
+    key: API_Key
+    default_value:
+regex:

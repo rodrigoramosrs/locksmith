@@ -1,0 +1,11 @@
+title: CircleCI Access Token
+url: https://circleci.com/docs/api/#api-overview
+details: 
+commands:
+- tool: curl
+  command: 'https://circleci.com/api/v1.1/me?circle-token=<TOKEN>'
+  parameters:
+  - description: TOKEN
+    key: <TOKEN>
+    default_value:
+regex:

@@ -1,0 +1,14 @@
+title: SauceLabs Username and access Key
+url: https://wiki.saucelabs.com/display/DOCS/Account+Methods
+details: 
+commands:
+- tool: curl
+  command: '-u <USERNAME>:<ACCESS_KEY> https://saucelabs.com/rest/v1/users/<USERNAME>'
+  parameters:
+  - description: USERNAME
+    key: <USERNAME>
+    default_value:
+  - description: ACCESS_KEY
+    key: <ACCESS_KEY>
+    default_value:
+regex:

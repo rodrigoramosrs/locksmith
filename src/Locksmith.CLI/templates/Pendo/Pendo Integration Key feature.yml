@@ -1,0 +1,14 @@
+title: Pendo Integration Key
+url: https://help.pendo.io/resources/support-library/api/index.html?bash#authentication
+details: 
+commands:
+- tool: curl
+  command: '-X GET https://app.pendo.io/api/v1/feature -H ''content-type: application/json'' -H ''x-pendo-integration-key:KEY_HERE'''
+  parameters:
+  - description: KEY
+    key: KEY_HERE
+    default_value:
+  - description: description
+    key: key
+    default_value:
+regex:

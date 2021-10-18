@@ -1,0 +1,14 @@
+title: New Relic Personal API Key (NerdGraph)
+url: https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph#endpoint
+details: 
+commands:
+- tool: curl
+  command: 'X POST https://api.newrelic.com/graphql \
+-H ''Content-Type: application/json'' \
+-H ''API-Key: YOUR_API_KEY'' \
+-d ''{ "query":  "{ requestContext { userId apiKey } }" } '''
+  parameters:
+  - description: API_KEY
+    key: YOUR_API_KEY
+    default_value:
+regex:

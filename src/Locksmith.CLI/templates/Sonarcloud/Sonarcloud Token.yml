@@ -1,0 +1,11 @@
+title: Sonarcloud Token
+url: https://sonarcloud.io/web_api
+details: 
+commands:
+- tool: curl
+  command: '-u <token>: "https://sonarcloud.io/api/authentication/validate"'
+  parameters:
+  - description: token
+    key: <token>
+    default_value:
+regex:

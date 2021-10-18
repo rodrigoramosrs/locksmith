@@ -1,0 +1,11 @@
+title: Zapier Webhook Token
+url: https://zapier.com/help/how-get-started-webhooks-zapier/
+details: 
+commands:
+- tool: curl
+  command: '-H "Accept: application/json" -H "Content-Type: application/json" -X POST -d ''{"name":"streaak"}'' "webhook_url_here"'
+  parameters:
+  - description: webhook_url
+    key: webhook_url_here
+    default_value:
+regex:

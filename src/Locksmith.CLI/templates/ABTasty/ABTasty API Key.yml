@@ -1,0 +1,14 @@
+title: ABTasty API Key
+url: https://developers.abtasty.com/server-side.html#authentication
+details: 
+commands:
+- tool: curl
+  command: '"api_endpoint_here" -H "x-api-key: your_api_key"'
+  parameters:
+  - description: API Endpoint
+    key: api_endpoint_here
+    default_value:
+  - description: API Key
+    key: your_api_key
+    default_value:
+regex:

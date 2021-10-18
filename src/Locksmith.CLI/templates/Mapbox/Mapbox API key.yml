@@ -1,0 +1,11 @@
+title: Mapbox API key
+url: https://docs.mapbox.com/api/
+details: Mapbox secret keys start with `sk`, rest start with `pk` (public token), `sk` (secret token), or `tk` (temporary token).
+commands:
+- tool: curl
+  command: '"https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=<ACCESS_TOKEN>"'
+  parameters:
+  - description: ACCESS_TOKEN
+    key: <ACCESS_TOKEN>
+    default_value:
+regex:

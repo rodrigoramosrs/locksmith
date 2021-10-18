@@ -1,0 +1,13 @@
+title: Visual Studio App Center API Token
+url: https://docs.microsoft.com/en-us/appcenter/api-docs/
+details: 'List all the app projects for the API Token'
+commands:
+- tool: curl
+  command: '-sX GET  "https://api.appcenter.ms/v0.1/apps" \
+      -H "Content-Type: application/json" \
+      -H "X-Api-Token: your_api_token"'
+  parameters:
+  - description: api_token
+    key: your_api_token
+    default_value:
+regex:

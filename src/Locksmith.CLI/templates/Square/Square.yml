@@ -1,0 +1,14 @@
+title: Square
+url: 'https://squareup.com'
+details: 'Secret regex: 
+App id/client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
+Auth token: `EAAA[a-zA-Z0-9]{60}`
+'
+commands:
+- tool: curl
+  command: '"https://squareup.com/oauth2/revoke" -d ''{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}''  -H "Content-Type: application/json" -H "Authorization: Client <CLIENT_SECRET>"'
+  parameters:
+  - description: CLIENT_SECRET
+    key: <CLIENT_SECRET>
+    default_value:
+regex: 'EAAA[a-zA-Z0-9]{60}'

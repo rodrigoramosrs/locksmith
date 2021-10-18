@@ -1,0 +1,1 @@
+curl-7.79.1-win32-mingw

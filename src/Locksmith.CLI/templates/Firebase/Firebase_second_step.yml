@@ -1,0 +1,18 @@
+title: Firebase_second_step
+url: https://firebase.google.com
+details: 'Requires a **custom token**, and an **API key**. 
+          1. Obtain ID token and refresh token from custom token and API key: 
+          2. Exchange ID token for auth token:'
+commands:
+- tool: curl
+  command: '-s -XPOST -H ''content-type: application/json'' -d ''{"idToken":":id_token"}'' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'''
+  parameters:
+  - description: id_token
+    key: id_token
+    default_value:
+  - description: api_key
+    key: api_key
+    default_value:
+regex:
+
+

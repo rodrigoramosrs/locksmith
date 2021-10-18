@@ -1,0 +1,12 @@
+title: New Relic REST API
+url: https://docs.newrelic.com/docs/apis/rest-api-v2/application-examples-v2/list-your-app-id-metric-timeslice-data-v2
+details: 
+commands:
+- tool: curl
+  command: '-X GET ''https://api.newrelic.com/v2/applications.json'' \
+     -H "X-Api-Key:${APIKEY}" -i'
+  parameters:
+  - description: APIKEY
+    key: APIKEY
+    default_value:
+regex:

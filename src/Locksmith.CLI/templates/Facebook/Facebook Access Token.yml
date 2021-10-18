@@ -1,0 +1,11 @@
+title: Facebook Access Token
+url: https://developers.facebook.com/
+details: 
+commands:
+- tool: curl
+  command: 'https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOKEN_HERE&version=v3.2'
+  parameters:
+  - description: ACCESS_TOKEN_HERE
+    key: ACCESS_TOKEN_HERE
+    default_value:
+regex:

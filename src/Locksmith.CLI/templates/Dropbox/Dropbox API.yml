@@ -1,0 +1,11 @@
+title: Dropbox API
+url: https://www.dropbox.com/developers/documentation/http/documentation
+details:
+commands:
+- tool: curl
+  command: '-X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"'
+  parameters:
+  - description: TOKEN_HERE
+    key: TOKEN_HERE
+    default_value:
+regex:

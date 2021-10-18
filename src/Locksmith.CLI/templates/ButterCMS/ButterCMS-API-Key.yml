@@ -1,0 +1,11 @@
+title: ButterCMS-API-Key
+url: https://buttercms.com/docs/api/#authentication
+details: 
+commands:
+- tool: curl
+  command: '-X GET ''https://api.buttercms.com/v2/posts/?auth_token=your_api_token'''
+  parameters:
+  - description: your_api_token
+    key: your_api_token
+    default_value:
+regex:

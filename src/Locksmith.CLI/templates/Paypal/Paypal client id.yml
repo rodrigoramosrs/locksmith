@@ -1,0 +1,19 @@
+title: Paypal client id
+url: https://developer.paypal.com/docs/api/get-an-access-token-curl
+details: 'The access token can be further used to extract data from the PayPal API. More information: https://developer.paypal.com/docs/api/overview/#make-rest-api-calls.
+
+This can be verified using:
+
+curl -v -X GET "https://api.sandbox.paypal.com/v1/identity/oauth2/userinfo?schema=paypalv1.1" -H "Content-Type: application/json" -H "Authorization: Bearer'
+commands:
+- tool: curl
+  command: '-v https://api.sandbox.paypal.com/v1/oauth2/token \
+   -H "Accept: application/json" \
+   -H "Accept-Language: en_US" \
+   -u "client_id:<client_id>" \
+   -d "grant_type=client_credentials"'
+  parameters:
+  - description: client_id
+    key: <client_id>
+    default_value:
+regex:
