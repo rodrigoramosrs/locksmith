@@ -1,0 +1,14 @@
+title: Zendesk Access token basic
+url: https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application
+details: 
+commands:
+- tool: curl
+  command: 'https://subdomain.zendesk.com/api/v2/tickets.json -H "Authorization: Basic ACCESS_TOKEN"'
+  parameters:
+  - description: 'zendesk subdomain. ex. https://subdomain.zendesk.com'
+    key: subdomain
+    default_value:
+  - description: ACCESS_TOKEN
+    key: ACCESS_TOKEN
+    default_value:
+regex:

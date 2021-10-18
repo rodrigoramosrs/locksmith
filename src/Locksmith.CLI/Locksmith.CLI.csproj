@@ -307,7 +307,10 @@
     <None Update="templates\Zapier\Zapier Webhook Token.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="templates\Zendesk\Zendesk Access token.yml">
+    <None Update="templates\Zendesk\Zendesk Access token basic.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="templates\Zendesk\Zendesk Access token bearer.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Tests\Default.json">

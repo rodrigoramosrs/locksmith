@@ -1,12 +1,11 @@
-title: Zendesk Access token
+title: Zendesk Access token bearer
 url: https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application
 details: 
 commands:
 - tool: curl
-  command: 'https://subdomain.zendesk.com/api/v2/tickets.json \
-  -H "Authorization: Bearer ACCESS_TOKEN"'
+  command: 'https://subdomain.zendesk.com/api/v2/tickets.json -H "Authorization: Bearer ACCESS_TOKEN"'
   parameters:
-  - description: zendesk subdomain. ex. https://subdomain.zendesk.com
+  - description: 'zendesk subdomain. ex. https://subdomain.zendesk.com'
     key: subdomain
     default_value:
   - description: ACCESS_TOKEN
