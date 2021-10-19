@@ -3,8 +3,7 @@ url: https://docs.newrelic.com/docs/apis/rest-api-v2/application-examples-v2/lis
 details: 
 commands:
 - tool: curl
-  command: '-X GET ''https://api.newrelic.com/v2/applications.json'' \
-     -H "X-Api-Key:${APIKEY}" -i'
+  command: '-X GET "https://api.newrelic.com/v2/applications.json" -H "X-Api-Key:APIKEY" -i'
   parameters:
   - description: APIKEY
     key: APIKEY
