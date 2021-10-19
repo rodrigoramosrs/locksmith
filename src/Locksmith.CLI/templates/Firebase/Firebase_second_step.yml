@@ -5,7 +5,7 @@ details: 'Requires a **custom token**, and an **API key**.
           2. Exchange ID token for auth token:'
 commands:
 - tool: curl
-  command: '-s -XPOST -H ''content-type: application/json'' -d ''{"idToken":":id_token"}'' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'''
+  command: '-s -XPOST -H "content-type: application/json" -d "{"idToken":":id_token"}" https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key"'
   parameters:
   - description: id_token
     key: id_token

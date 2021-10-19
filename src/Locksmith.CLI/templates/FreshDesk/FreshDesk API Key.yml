@@ -1,10 +1,10 @@
 title: FreshDesk API Key
 url: https://developers.freshdesk.com/api/#getting-started
-details: 'This requires the API key in ''user@yourcompany.com'', pass in ''test'' and ''domain.freshdesk.com'' to be the instance url of the target. 
+details: 'This requires the API key in "user@yourcompany.com", pass in "test" and "domain.freshdesk.com" to be the instance url of the target. 
           In case you get a 403, try the endpoint api/v2/tickets, which is accessible for all keys.'
 commands:
 - tool: curl
-  command: '-v -u user@yourcompany.com:psw -X GET ''https://domain.freshdesk.com/api/v2/groups/1'''
+  command: '-v -u user@yourcompany.com:psw -X GET "https://domain.freshdesk.com/api/v2/groups/1"'
   parameters:
   - description: 'domain ex. https://DOMAIN.freshdesk.com'
     key: domain

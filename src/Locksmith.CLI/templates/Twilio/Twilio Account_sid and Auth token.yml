@@ -3,7 +3,7 @@ url: https://www.twilio.com/docs/iam/api/account
 details: 
 commands:
 - tool: curl
-  command: '-X GET ''https://api.twilio.com/2010-04-01/Accounts.json'' -u ACCOUNT_SID:AUTH_TOKEN'
+  command: '-X GET "https://api.twilio.com/2010-04-01/Accounts.json" -u ACCOUNT_SID:AUTH_TOKEN'
   parameters:
   - description: ACCOUNT_SID
     key: ACCOUNT_SID

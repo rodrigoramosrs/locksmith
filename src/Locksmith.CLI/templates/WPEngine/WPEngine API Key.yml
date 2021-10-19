@@ -1,6 +1,6 @@
 title: WPEngine API Key
 url: https://wpengineapi.com/
-details: 'This issue can be further exploited by checking out [@hateshape](https://github.com/hateshape/)''s gist https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a.'
+details: 'This issue can be further exploited by checking out [@hateshape](https://github.com/hateshape/)"s gist https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a.'
 commands:
 - tool: curl
   command: '"https://api.wpengine.com/1.2/?method=site&account_name=<ACCOUNT_NAME>&wpe_apikey=WPENGINE_APIKEY"'

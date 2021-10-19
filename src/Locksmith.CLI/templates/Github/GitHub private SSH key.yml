@@ -1,7 +1,7 @@
 title: GitHub private SSH key
 url: url
 details: 'SSH private keys can be tested against github.com to see if they are registered against an existing user account. If the key exists the username corresponding to the key will be provided. ([source](https://github.com/streaak/keyhacks/issues/2))
-Success message: "Hi <username>! You''ve successfully authenticated, but GitHub does not provide shell access."'
+Success message: "Hi <username>! You"ve successfully authenticated, but GitHub does not provide shell access."'
 commands:
 - tool: ssh
   command: '-i <SSH_KEY_PATH> -T git@github.com'

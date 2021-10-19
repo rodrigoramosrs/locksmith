@@ -3,7 +3,7 @@ url: https://help.pendo.io/resources/support-library/api/index.html?bash#authent
 details: 
 commands:
 - tool: curl
-  command: '-X GET https://app.pendo.io/api/v1/metadata/schema/account -H ''content-type: application/json'' -H ''x-pendo-integration-key:KEY_HERE'''
+  command: '-X GET https://app.pendo.io/api/v1/metadata/schema/account -H "content-type: application/json" -H "x-pendo-integration-key:KEY_HERE"'
   parameters:
   - description: KEY
     key: KEY_HERE

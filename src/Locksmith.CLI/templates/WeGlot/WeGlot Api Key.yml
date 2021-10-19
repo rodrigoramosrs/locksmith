@@ -4,9 +4,9 @@ details:
 commands:
 - tool: curl
   command: '-X POST \
-  ''https://api.weglot.com/translate?api_key=my_api_key'' \
-    -H ''Content-Type: application/json'' \
-    -d ''{  
+  "https://api.weglot.com/translate?api_key=my_api_key" \
+    -H "Content-Type: application/json" \
+    -d "{  
     "l_from":"en",
     "l_to":"fr",
     "request_url":"https://www.website.com/",
@@ -14,7 +14,7 @@ commands:
         {"w":"This is a blue car", "t": 1},
         {"w":"This is a black car", "t": 1}
     ]
-  }'''
+  }"'
   parameters:
   - description: api_key
     key: my_api_key

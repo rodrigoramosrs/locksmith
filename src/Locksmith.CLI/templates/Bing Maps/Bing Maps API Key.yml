@@ -1,6 +1,6 @@
 title: Bing Maps API Key
 url: https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/find-a-location-by-address
-details: 'Visit this link to check for the key''s validity. A valid key''s response should start with authenticationResultCode:	"ValidCredentials"'
+details: 'Visit this link to check for the key"s validity. A valid key"s response should start with authenticationResultCode:	"ValidCredentials"'
 commands:
 - tool: curl
   command: 'https://dev.virtualearth.net/REST/v1/Locations?CountryRegion=US&adminDistrict=WA&locality=Somewhere&postalCode=98001&addressLine=100%20Main%20St.&key=API_KEY'

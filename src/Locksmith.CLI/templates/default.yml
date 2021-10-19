@@ -1,0 +1,14 @@
+title: title
+url: url
+details: details
+commands:
+- tool: curl
+  command: 'COMMAND_HERE'
+  parameters:
+  - description: description
+    key: key
+    default_value:
+  - description: description
+    key: key
+    default_value:
+regex:

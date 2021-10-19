@@ -8,17 +8,17 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 npm whoami
 Another way to verify token is to query API directly:
 
-curl -H ''authorization: Bearer 00000000-0000-0000-0000-000000000000'' ''https://registry.npmjs.org/-/whoami''
-You''ll get username in response in case of success, 401 Unauthorized in case if token doesn''t exists and 403 Forbidden in case if your IP address is not whitelisted.
+curl -H "authorization: Bearer 00000000-0000-0000-0000-000000000000" "https://registry.npmjs.org/-/whoami"
+You"ll get username in response in case of success, 401 Unauthorized in case if token doesn"t exists and 403 Forbidden in case if your IP address is not whitelisted.
 
-NPM token can be CIDR-whitelisted. Thus if you are using token from non-whitelisted CIDR you''ll get 403 Forbidden in response. So try to verify NPM token from different IP ranges!.
+NPM token can be CIDR-whitelisted. Thus if you are using token from non-whitelisted CIDR you"ll get 403 Forbidden in response. So try to verify NPM token from different IP ranges!.
 Refer: https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-tokens-with-the-cli
 
-P.S. Some companies uses registries other than registry.npmjs.org. If it''s the case replace all registry.npmjs.org occurrences with domain name of company''s NPM registry.
+P.S. Some companies uses registries other than registry.npmjs.org. If it"s the case replace all registry.npmjs.org occurrences with domain name of company"s NPM registry.
 Refer: https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3'
 commands:
 - tool: curl
-  command: 'curl -H ''authorization: Bearer BEARER_KEY'' ''https://registry.npmjs.org/-/whoami'''
+  command: 'curl -H "authorization: Bearer BEARER_KEY" "https://registry.npmjs.org/-/whoami"'
   parameters:
   - description: BEARER_KEY
     key: BEARER_KEY

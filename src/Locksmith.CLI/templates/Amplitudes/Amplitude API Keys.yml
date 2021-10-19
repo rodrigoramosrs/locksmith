@@ -3,7 +3,7 @@ url: https://help.amplitude.com/hc/en-us/articles/205406637-Export-API-Export-Yo
 details: 'The response is a zipped archive of JSON files, with potentially multiple files per hour. Note that events prior to 2014-11-12 will be grouped by day instead of by the hour. If you request data for a time range during which no data has been collected for the project, then you will receive a 404 response from the server.'
 commands:
 - tool: curl
-  command: '-u API_Key:Secret_Key ''https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20'''
+  command: '-u API_Key:Secret_Key "https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20"'
   parameters:
   - description: API_Key
     key: API_Key

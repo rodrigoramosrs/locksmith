@@ -6,7 +6,7 @@ Auth token: `EAAA[a-zA-Z0-9]{60}`
 '
 commands:
 - tool: curl
-  command: '"https://squareup.com/oauth2/revoke" -d ''{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}''  -H "Content-Type: application/json" -H "Authorization: Client <CLIENT_SECRET>"'
+  command: '"https://squareup.com/oauth2/revoke" -d "{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}"  -H "Content-Type: application/json" -H "Authorization: Client <CLIENT_SECRET>"'
   parameters:
   - description: CLIENT_SECRET
     key: <CLIENT_SECRET>

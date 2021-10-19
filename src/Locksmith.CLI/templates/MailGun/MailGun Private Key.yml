@@ -3,7 +3,7 @@ url: https://documentation.mailgun.com/en/latest/api_reference.html
 details: 
 commands:
 - tool: curl
-  command: '--user ''api:YOUR_API_KEY'' "https://api.mailgun.net/v3/domains"'
+  command: '--user "api:YOUR_API_KEY" "https://api.mailgun.net/v3/domains"'
   parameters:
   - description: API_KEY
     key: YOUR_API_KEY

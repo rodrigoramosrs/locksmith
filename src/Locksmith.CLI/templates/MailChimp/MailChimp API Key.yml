@@ -3,7 +3,7 @@ url: https://developer.mailchimp.com/documentation/mailchimp/reference/overview
 details: 
 commands:
 - tool: curl
-  command: '--request GET --url ''https://<dc>.api.mailchimp.com/3.0/'' --user ''anystring:<API_KEY>'' --include'
+  command: '--request GET --url "https://<dc>.api.mailchimp.com/3.0/" --user "anystring:<API_KEY>" --include'
   parameters:
   - description: API_KEY
     key: <API_KEY>

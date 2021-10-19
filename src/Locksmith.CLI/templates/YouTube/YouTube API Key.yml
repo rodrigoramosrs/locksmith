@@ -1,9 +1,9 @@
 title: YouTube API Key
 url: https://developers.google.com/youtube/v3/docs/
-details: 'Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie''s channel).'
+details: 'Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie"s channel).'
 commands:
 - tool: curl
-  command: '-iLk ''https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key=KEY_HERE'''
+  command: '-iLk "https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key=KEY_HERE"'
   parameters:
   - description: KEY
     key: KEY_HERE

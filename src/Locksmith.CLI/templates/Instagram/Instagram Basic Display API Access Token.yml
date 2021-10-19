@@ -3,7 +3,7 @@ url: https://developers.facebook.com/docs/instagram-basic-display-api/getting-st
 details: 'E.g.: IGQVJ...'
 commands:
 - tool: curl
-  command: '-X GET ''https://graph.instagram.com/user-id?fields=id,username&access_token=access-token'''
+  command: '-X GET "https://graph.instagram.com/user-id?fields=id,username&access_token=access-token"'
   parameters:
   - description: user-id
     key: user-id

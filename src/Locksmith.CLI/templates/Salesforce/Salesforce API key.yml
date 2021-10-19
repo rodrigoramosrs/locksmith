@@ -3,7 +3,7 @@ url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/qu
 details: 
 commands:
 - tool: curl
-  command: 'https://instance_name.salesforce.com/services/data/v20.0/ -H ''Authorization: Bearer access_token_here'''
+  command: 'https://instance_name.salesforce.com/services/data/v20.0/ -H "Authorization: Bearer access_token_here"'
   parameters:
   - description: 'instance_name. ex: https://instance_name.salesforce.com/' 
     key: instance_name
