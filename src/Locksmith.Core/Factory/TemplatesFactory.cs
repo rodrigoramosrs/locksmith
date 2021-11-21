@@ -20,11 +20,21 @@ namespace Locksmith.Core.Factory
         public static List<TemplateModel> GetTemplatesFromFolder(string Folder = @".\Templates")
         {
             List<TemplateModel> result = new List<TemplateModel>();
-
-            foreach (var ymlFile in Directory.GetFiles(Folder, "*.yml", SearchOption.AllDirectories))
+            string lastFile = "";
+            try
             {
-                result.Add(_ymlDesserializer.Deserialize<TemplateModel>(File.ReadAllText(ymlFile)));
+                foreach (var ymlFile in Directory.GetFiles(Folder, "*.yml", SearchOption.AllDirectories))
+                {
+                    lastFile = ymlFile;
+                    result.Add(_ymlDesserializer.Deserialize<TemplateModel>(File.ReadAllText(ymlFile)));
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
 
             return result;
         }

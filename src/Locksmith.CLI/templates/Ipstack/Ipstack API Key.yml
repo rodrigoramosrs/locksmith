@@ -3,7 +3,7 @@ url: https://ipstack.com/documentation
 details: 
 commands:
 - tool: curl
-  command: "'https://api.ipstack.com/ip_address?access_key=keyhere"'
+  command: "'https://api.ipstack.com/ip_address?access_key=keyhere'"
   parameters:
   - description: ip_address
     key: ip_address
