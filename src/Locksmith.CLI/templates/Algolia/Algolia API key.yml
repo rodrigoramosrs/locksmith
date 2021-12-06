@@ -5,10 +5,10 @@ commands:
 - tool: curl
   command: '--request PUT
   --url https://<application-id>-1.algolianet.com/1/indexes/<example-index>/settings
-  --header"content-type: application/json"
-  --header"x-algolia-api-key: <example-key>"
-  --header"x-algolia-application-id: <application-id>"
-  --data"{"highlightPreTag": "<script>alert(1);</script>"}"'
+  --header "content-type: application/json"
+  --header "x-algolia-api-key: <example-key>"
+  --header "x-algolia-application-id: <application-id>"
+  --data "{"highlightPreTag": "<script>alert(1);</script>"}"'
   parameters:
   - description: 'Application ID'
     key: <application-id>
