@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build src/Locksmith.CLI/Locksmith.CLI.csproj --no-restore
     - name: Test
-      run: dotnet test src/Locksmith.Test/Locksmith.Test.csproj --no-build --verbosity normal
+      run: dotnet test src/Locksmith.Test/Locksmith.Test.csproj --verbosity normal
