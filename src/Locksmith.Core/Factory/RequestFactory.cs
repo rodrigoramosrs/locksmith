@@ -39,6 +39,8 @@ namespace Locksmith.Core.Factory
             string rootPath = @".\curl";
             if (OSUtils.IsWin())
                 rootPath = OSUtils.GetWindowsShortPath($"{Environment.CurrentDirectory}\\lib\\curl.exe");
+            else
+                CurlCommand = CurlCommand.Replace("\\\"", "\"");
 
             result = ShellService.Execute($@"{rootPath} {CurlCommand}");
             return result;
